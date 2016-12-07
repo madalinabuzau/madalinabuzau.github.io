@@ -185,14 +185,18 @@ dscores = probs.copy()
 # Substract 1 from the scores of the correct class
 dscores[np.arange(n_samples),y] -= 1
 
-# Gradient of the loss with respect to weights
-dW = X.T.dot(dscores)
+# Instead of dividing both dW and db with the number of
+# samples it's easier to divide dscores beforehand
+dscores /= n_samples
 
-# Add gradient regularization
+# Gradient of the loss with respect to weights
+dW = X.T.dot(dscores) 
+
+# Add gradient regularization 
 dW += reg*W
 
 # Gradient of the loss with respect to biases
-db = dscores
+db = np.sum(dscores, axis=0, keepdims=True)
 ```
 
 At this point, we have everything we need to start training our model with gradient descent.
