@@ -218,7 +218,7 @@ manually, we can split the data into a training and validation set and use
 [early stopping](https://en.wikipedia.org/wiki/Early_stopping)
 on our validation samples to avoid overfitting our model on the training set. The validation set can also be used to tune your  hyperparameters $$\alpha$$ and $$\lambda$$.
 
-I have created a class for the Softmax linear classifier, based on the first assignment of [CS231](http://cs231n.github.io/). You can download it [here](/ipynb/gradient_descent_softmax.ipynb).
+I have created a class for the Softmax linear classifier, based on the first assignment of [CS231](http://cs231n.github.io/). You can find it [here](https://github.com/madalinabuzau/madalinabuzau.github.io/blob/master/ipynb/gradient_descent_softmax.ipynb).
 
 You can use this class either to train your entire dataset with softmax.train() or you can use softmax.train_early_stopping() to stop training if there is no improvement in the accuracy of your predictions on the validation dataset, after a certain number of iterations.
 
